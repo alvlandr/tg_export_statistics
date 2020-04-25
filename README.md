@@ -15,5 +15,6 @@ Results examples:
 Если взять только активные дни, то в среднем 59 сообщений
 Больше всего сообщений отправлено 2020-04-21 (469 сообщений)
 ```
-
-![img-1](./imgs/dow.png "Weekdays disribution") ![img-2](./imgs/hour.png "Hour disribution 2") ![img-3](./imgs/timeline.png "Timeline")
+ Weekdays distribution|Hour distribution|Timeline
+:----------------------------:|:----------------------------:|:----------------------------:
+![img-1](./imgs/dow.png "Weekdays distribution") | ![img-2](./imgs/hour.png "Hour distribution") | ![img-3](./imgs/timeline.png "Timeline")
