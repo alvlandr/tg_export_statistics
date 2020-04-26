@@ -1,7 +1,7 @@
 #### Telegram chats texts analysis
 Usage:
 ```
-python analyze_tg_chat.py -i ChatExport_23_04_2020 -o ./imgs
+python analyze_tg_chat.py -i ChatExport_23_04_2020 -o ./imgs -s project_stopwords.txt
 ```
 
 Results examples:

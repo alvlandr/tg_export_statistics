@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+
+"""Core script to process .html data and return results"""
 import argparse
 import os
 import sys
@@ -23,9 +26,15 @@ argparser.add_argument(
     '--output_folder',
     help='Path to a folder with generated files',
 )
+argparser.add_argument(
+    '-s',
+    '--stopwords_file',
+    help='Path to a file with personal stopwords',
+)
 args = argparser.parse_args()
 path = args.input_folder
 output_path = args.output_folder
+stopwords_path = args.stopwords_file
 
 full_df = parse_export_data(path)
 names = full_df['sender'].value_counts()[
@@ -118,7 +127,8 @@ plot_stats(
 )
 
 russian_stopwords = stopwords.words("russian")
-task_stopwords = ['пока', 'кажется', 'вообще', 'кстати', 'очень', 'это', 'тебе', 'почему', 'ru', 'http', 'https']
+with open(stopwords_path) as sfile:
+    task_stopwords = sfile.readlines()
 all_stopwords = russian_stopwords + task_stopwords
 for sender in ['all'] + names:
     sender_text = prepare_word_cloud(full_df, sender)
